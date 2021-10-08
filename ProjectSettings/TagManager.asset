@@ -47,3 +47,6 @@ TagManager:
   - name: Human
     uniqueID: 2206704413
     locked: 0
+  - name: Interactable
+    uniqueID: 1760998711
+    locked: 0
