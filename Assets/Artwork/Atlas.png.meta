@@ -161,6 +161,9 @@ TextureImporter:
   - first:
       213: -6613792370922084840
     second: chest_0
+  - first:
+      213: -1988828135353101337
+    second: "cs\xF6ves_fal"
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1370,6 +1373,27 @@ TextureImporter:
       bones: []
       spriteID: 816200941e61734a0800000000000000
       internalID: -6613792370922084840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "cs\xF6ves_fal"
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 192
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e3d9f029534664e0800000000000000
+      internalID: -1988828135353101337
       vertices: []
       indices: 
       edges: []
