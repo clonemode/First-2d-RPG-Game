@@ -17,13 +17,13 @@ public class Enemy : Mover
 
     //hitbox
     public ContactFilter2D filter;
-    private BoxCollider2D hitbox;
+    public BoxCollider2D hitbox;
     private Collider2D[] hits = new Collider2D[10];
 
     protected override void Start()
     {
         base.Start();
-        playerTransform = GameManager.instance.Player.transform;
+        playerTransform = GameManager2.instance.player.transform;
         startingPosition = transform.position;
         hitbox = transform.GetChild(0).GetComponent<BoxCollider2D>();
     }
@@ -74,7 +74,7 @@ public class Enemy : Mover
     protected override void Death()
     {
         Destroy(gameObject);
-        GameManager.instance.experience += xpValue;
-        GameManager.instance.ShowText("+" + xpValue + "xp", 30, Color.magenta, transform.position, Vector3.up * 40, 1.0f);
+        GameManager2.instance.experience += xpValue;
+        GameManager2.instance.ShowText("+" + xpValue + "xp", 30, Color.magenta, transform.position, Vector3.up * 40, 1.0f);
     }
 }

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager2 : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager2 instance;
     private void Awake()
     {
-        if(GameManager.instance != null)
+        if (GameManager2.instance != null)
         {
             Destroy(gameObject);
             return;
@@ -19,7 +19,9 @@ public class GameManager : MonoBehaviour
         instance = this;
         SceneManager.sceneLoaded += LoadState;
         DontDestroyOnLoad(gameObject);
+
     }
+
 
     ///Ressources
     public List<Sprite> playerSprite;
@@ -28,20 +30,24 @@ public class GameManager : MonoBehaviour
     public List<int> xpTable;
 
     ///References
-    public Player Player;
+    public Player player;
     // public weapon weapon...
+    public FloatingTextManager floatingTextManager;
 
     //Logic
     public int pesos;
     public int experience;
 
+
+
+
+    
     //Floating Text
-    public FloatingTextManager floatingTextManager;
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
         floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
     }
-    
+
 
     //Save
     /*

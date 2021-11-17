@@ -260,6 +260,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  boxCollider: {fileID: 0}
 --- !u!1 &87733004
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,9 +2227,25 @@ MonoBehaviour:
   hitpoint: 2
   maxHitpoint: 2
   pushRecoverySpeed: 0.2
+  boxCollider: {fileID: 0}
   xpValue: 1
   triggerLenght: 1
   chaseLenght: 5
+  filter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  hitbox: {fileID: 0}
 --- !u!1 &360945633
 GameObject:
   m_ObjectHideFlags: 0
@@ -2549,6 +2566,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  boxCollider: {fileID: 0}
   damagePoint: 1
   pushForce: 2
   weaponLevel: 0
@@ -2669,6 +2687,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  boxCollider: {fileID: 0}
   sceneNames:
   - Dungeon1
 --- !u!61 &1059540284
@@ -12044,6 +12063,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1917077064}
   - component: {fileID: 1917077063}
+  - component: {fileID: 1917077065}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -12060,15 +12080,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1917077062}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 349c11bad32a1ab4795c748a3a92185d, type: 3}
+  m_Script: {fileID: 11500000, guid: b78762263e225c94183f30997d29cc3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerSprite: []
   weaponSprites: []
   weaponPrice: 
   xpTable: 
-  Player: {fileID: 0}
-  pesos: 15
+  player: {fileID: 2028762048}
+  floatingTextManager: {fileID: 1917077065}
+  pesos: 0
   experience: 0
 --- !u!4 &1917077064
 Transform:
@@ -12084,6 +12105,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1917077065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917077062}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7053047d5abb50340bd263337aafbe28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textContainer: {fileID: 0}
+  textPrefab: {fileID: 0}
 --- !u!1 &2028762046
 GameObject:
   m_ObjectHideFlags: 0
@@ -12144,6 +12179,7 @@ MonoBehaviour:
   hitpoint: 10
   maxHitpoint: 10
   pushRecoverySpeed: 0.2
+  boxCollider: {fileID: 0}
 --- !u!212 &2028762049
 SpriteRenderer:
   m_ObjectHideFlags: 0
