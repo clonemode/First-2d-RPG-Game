@@ -30,7 +30,7 @@ public class FloatingTextManager : MonoBehaviour
         floatingText.Show();
     }
 
-    private FloatingText GetFloatingText();
+    private FloatingText GetFloatingText()
     {
         FloatingText txt = floatingTexts.Find(t => !t.active);
 
@@ -38,7 +38,7 @@ public class FloatingTextManager : MonoBehaviour
         {
             txt = new FloatingText();
             txt.go = Instantiate(textPrefab);
-            txt.go.transdorm.SetParent(textContainer.transform);
+            txt.go.transform.SetParent(textContainer.transform);
             txt.txt = txt.go.GetComponent<Text>();
         
             floatingTexts.Add(txt);

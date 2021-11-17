@@ -8,7 +8,7 @@ public class Collidable : MonoBehaviour
     private BoxCollider2D boxCollider;
     private Collider2D[] hits = new Collider2D[10];
 
-    protected virtual private void Start()
+    protected virtual void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
     }
@@ -26,7 +26,6 @@ public class Collidable : MonoBehaviour
 
             //the array is not cleaned up, so we do it ourself
             hits[i] = null;
-
         }
     }
     protected virtual void OnCollide(Collider2D coll)

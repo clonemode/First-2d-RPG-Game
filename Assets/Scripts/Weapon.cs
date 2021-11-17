@@ -26,7 +26,7 @@ public class Weapon : Collidable
     {
         base.Update();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             if (Time.time - lastSwing > cooldown)
             {
@@ -38,7 +38,21 @@ public class Weapon : Collidable
 
     protected override void OnCollide(Collider2D coll)
     {
-        Debug.Log("coll.name");
+        if(coll.tag == "Fighter")
+        {
+            if (coll.name == "Player")
+                return;
+
+            //crate a new damage object then we'll send it ot the fighter we've hit
+            Damage dmg = new Damage
+            {
+                damageAmount = damagePoint,
+                origin = transform.position,
+                pushForce = pushForce
+            };
+
+            coll.SendMessage("ReceiveDamage", dmg);
+        }
     }
 
     private void Swing()

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,7 +33,5 @@ public class FloatingText
             Hide();
 
         go.transform.position += motion * Time.deltaTime;
-
     }
-
 }
