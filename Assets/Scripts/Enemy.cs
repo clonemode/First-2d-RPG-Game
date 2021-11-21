@@ -23,7 +23,7 @@ public class Enemy : Mover
     protected override void Start()
     {
         base.Start();
-        playerTransform = GameManager2.instance.player.transform;
+        playerTransform = GameManager.instance.player.transform;
         startingPosition = transform.position;
         hitbox = transform.GetChild(0).GetComponent<BoxCollider2D>();
     }
@@ -74,7 +74,7 @@ public class Enemy : Mover
     protected override void Death()
     {
         Destroy(gameObject);
-        GameManager2.instance.experience += xpValue;
-        GameManager2.instance.ShowText("+" + xpValue + "xp", 30, Color.magenta, transform.position, Vector3.up * 40, 1.0f);
+        GameManager.instance.experience += xpValue;
+        GameManager.instance.ShowText("+" + xpValue + "xp", 30, Color.magenta, transform.position, Vector3.up * 40, 1.0f);
     }
 }

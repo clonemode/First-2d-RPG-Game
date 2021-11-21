@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager2 : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static GameManager2 instance;
+    public static GameManager instance;
     private void Awake()
     {
-        if (GameManager2.instance != null)
+        if (GameManager.instance != null)
         {
             Destroy(gameObject);
             return;
@@ -39,9 +39,6 @@ public class GameManager2 : MonoBehaviour
     public int experience;
 
 
-
-
-    
     //Floating Text
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
