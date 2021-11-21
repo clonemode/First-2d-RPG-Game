@@ -26,6 +26,13 @@ public abstract class Mover : Fighter
         else if (moveDelta.x < 0)
             transform.localScale = new Vector3(-1, 1, 1);
 
+        //add push vector
+        moveDelta += pushDirection;
+
+        //reduce push force /frame rate
+        pushDirection = Vector3.Lerp(pushDirection, Vector3.zero, pushRecoverySpeed);
+
+
         //blocking
         hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, moveDelta.y), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Human", "Blocking"));
         if (hit.collider == null)
@@ -42,6 +49,4 @@ public abstract class Mover : Fighter
             transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
         }
     }
-
-    
 }
