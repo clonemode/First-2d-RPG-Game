@@ -8,10 +8,10 @@ public class FloatingTextManager : MonoBehaviour
     public GameObject textContainer;
     public GameObject textPrefab;
 
-    private List<FloatingText> floatingTexts = new List<FloatingText>();
+    public List<FloatingText> floatingTexts = new List<FloatingText>();
 
 
-    private void Update()
+    public void Update()
     {
         foreach (FloatingText txt in floatingTexts)
             txt.UpdateFloatingText();
@@ -31,7 +31,7 @@ public class FloatingTextManager : MonoBehaviour
         floatingText.Show();
     }
 
-    private FloatingText GetFloatingText()
+    public FloatingText GetFloatingText()
     {
         FloatingText txt = floatingTexts.Find(t => !t.active);
 

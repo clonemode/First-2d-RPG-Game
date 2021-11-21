@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    private void Awake()
+    public void Awake()
     {
         if (GameManager.instance != null)
         {
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     //Floating Text
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
-        floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
+        floatingTextManager.Show(msg,fontSize,color,position,motion,duration);
     }
 
 
