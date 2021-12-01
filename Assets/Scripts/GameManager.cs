@@ -124,6 +124,7 @@ public class GameManager : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("SaveState"))
             return;
+
         string[] data = PlayerPrefs.GetString("SaveState").Split('|');
 
         //Change player skin
