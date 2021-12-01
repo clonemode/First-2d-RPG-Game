@@ -220,7 +220,7 @@ TextureImporter:
     second: skull_0
   - first:
       213: 703316215228858992
-    second: Atlas_72
+    second: enemy_1
   - first:
       213: -5206644523654691916
     second: folt_1
@@ -1832,6 +1832,27 @@ TextureImporter:
       bones: []
       spriteID: 51bdb2c1d949f4400800000000000000
       internalID: 310630301815266069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 64
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0720d751f5ea2c900800000000000000
+      internalID: 703316215228858992
       vertices: []
       indices: 
       edges: []

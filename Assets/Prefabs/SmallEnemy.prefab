@@ -243,7 +243,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 0.16161616, y: 0.16161616}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -264,8 +264,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c9366a37f563148ac40d3024ec2543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoint: 10
-  maxHitpoint: 10
+  hitpoint: 3
+  maxHitpoint: 20
   pushRecoverySpeed: 0.1
   boxCollider: {fileID: 0}
   xpValue: 10

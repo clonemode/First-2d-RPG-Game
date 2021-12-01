@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
         if (GameManager.instance != null)
         {
             Destroy(gameObject);
+            Destroy(player.gameObject);
+            Destroy(floatingTextManager.gameObject);
             return;
         }
 
@@ -19,7 +21,6 @@ public class GameManager : MonoBehaviour
         instance = this;
         SceneManager.sceneLoaded += LoadState;
         DontDestroyOnLoad(gameObject);
-
     }
 
 
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
     public Player player;
     public Weapon weapon;
     public FloatingTextManager floatingTextManager;
+    public Animator deathMenuAnim;
 
     //Logic
     public int pesos;
@@ -99,7 +101,13 @@ public class GameManager : MonoBehaviour
             player.OnLevelUp();
     }
 
-    
+    //deathmenu and respawn
+    public void Respawn()
+    {
+        deathMenuAnim.SetTrigger("Hide");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
+        player.Respawn();
+    }
 
     //Save
     /*
@@ -122,6 +130,8 @@ public class GameManager : MonoBehaviour
     }
     public void LoadState(Scene s, LoadSceneMode mode)
     {
+        SceneManager.sceneLoaded += LoadState;
+
         if (!PlayerPrefs.HasKey("SaveState"))
             return;
 
