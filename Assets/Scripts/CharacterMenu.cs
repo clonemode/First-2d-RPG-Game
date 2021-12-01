@@ -42,6 +42,7 @@ public class CharacterMenu : MonoBehaviour
     private void OnSelectionChanged()
     {
         characterSelectionSprite.sprite = GameManager.instance.playerSprite[currentCharacterSelection];
+        GameManager.instance.player.SwapSprite(currentCharacterSelection);
     }
 
     //weapon upgrade
@@ -55,17 +56,36 @@ public class CharacterMenu : MonoBehaviour
     public void UpdateMenu()
     {
         //weapon
-        weaponSprite.sprite = GameManager.instance.weaponSprites[0];
-        upgradeCostText.text = "Not Implemented";
+        weaponSprite.sprite = GameManager.instance.weaponSprites[GameManager.instance.weapon.weaponLevel];
+        if (GameManager.instance.weapon.weaponLevel == GameManager.instance.weaponPrice.Count)
+            upgradeCostText.text = "MAX";
+        else
+            upgradeCostText.text = GameManager.instance.weaponPrice[GameManager.instance.weapon.weaponLevel].ToString();
+
         //meta
-        levelText.text = "Not Implemented";
+        levelText.text = GameManager.instance.GetCurrentLevel().ToString();
         hitPointText.text = GameManager.instance.player.hitpoint.ToString();
         pesosText.text = GameManager.instance.pesos.ToString();
 
         //xp bar
-        xpText.text = "Not Implemented";
-        xpBar.localScale = new Vector3(0.5f, 0, 0);
+        int currlevel = GameManager.instance.GetCurrentLevel();
+        if (currlevel == GameManager.instance.xpTable.Count)
+        {
+            xpText.text = GameManager.instance.experience.ToString() + "total experinece points"; //display total xp
+            xpBar.localScale = Vector3.one;
+        }
+        else
+        {
+            int prevLevelXp = GameManager.instance.GetXpToLevel(currlevel-1);
+            int currLevelXp = GameManager.instance.GetXpToLevel(currlevel);
 
+            int diff = currLevelXp - prevLevelXp;
+            int currXpIntoLevel = GameManager.instance.experience - prevLevelXp;
+
+            float completionRatio = (float)currXpIntoLevel / (float)diff;
+            xpBar.localScale = new Vector3(completionRatio, 1, 1);
+            xpText.text = currXpIntoLevel.ToString() + " / " + diff;
+        }
     }
 
 }

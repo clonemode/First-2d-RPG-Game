@@ -17,6 +17,11 @@ public class Weapon : Collidable
     private float cooldown = 0.5f;
     private float lastSwing;
 
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
     protected override void Start()
     {
         base.Start();
@@ -68,5 +73,11 @@ public class Weapon : Collidable
         weaponLevel++;
         spriteRenderer.sprite = GameManager.instance.weaponSprites[weaponLevel];
         //change stats
+    }
+
+    public void SetWeaponLevel(int level)
+    {
+        weaponLevel = level;
+        spriteRenderer.sprite = GameManager.instance.weaponSprites[weaponLevel];
     }
 }

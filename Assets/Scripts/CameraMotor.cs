@@ -8,6 +8,11 @@ public class CameraMotor : MonoBehaviour
     public float boundX = 0.15f;
     public float boundY = 0.05f;
 
+    private void Start()
+    {
+        lookAt = GameObject.Find("Player").transform;
+    }
+
     //late update mert desínc ha normal update lenne és idegesítõ :) 
     private void LateUpdate()
     {

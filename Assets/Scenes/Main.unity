@@ -314,7 +314,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.15, y: 0.16}
+    oldSize: {x: 0.13, y: 0.16}
     newSize: {x: 0.15, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -364,7 +364,7 @@ SpriteRenderer:
   m_SortingLayerID: -2088262883
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4869357254534750094, guid: 1ea9601a4c2c45f4d9df211a260e27d5, type: 3}
+  m_Sprite: {fileID: -6190716609726613716, guid: 1ea9601a4c2c45f4d9df211a260e27d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2694,7 +2694,7 @@ MonoBehaviour:
   maxHitpoint: 10
   pushRecoverySpeed: 0.1
   boxCollider: {fileID: 0}
-  xpValue: 1
+  xpValue: 10
   triggerLenght: 1
   chaseLenght: 5
   filter:
@@ -3189,7 +3189,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 564356665}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 869260927}
+        m_TargetAssemblyTypeName: CharacterMenu, Assembly-CSharp
+        m_MethodName: OnArrowClick
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &564356665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4143,6 +4155,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1010132275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1010132276}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1010132276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010132275}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.63, y: -0.556, z: -612.76855}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1059540282
 GameObject:
   m_ObjectHideFlags: 0
@@ -4364,7 +4406,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1089154884}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 869260927}
+        m_TargetAssemblyTypeName: CharacterMenu, Assembly-CSharp
+        m_MethodName: OnArrowClick
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1089154884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13921,7 +13975,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1572916286952140688, guid: 17b7ed5a4f0595a459c01fe86e538dcc, type: 3}
       propertyPath: pesosAmount
-      value: 25
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1572916286952140689, guid: 17b7ed5a4f0595a459c01fe86e538dcc, type: 3}
       propertyPath: m_Name
@@ -14582,7 +14636,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1904444707}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 869260927}
+        m_TargetAssemblyTypeName: CharacterMenu, Assembly-CSharp
+        m_MethodName: OnUpgradeClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1904444707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14650,7 +14716,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859765942881aa243a47fa6f9cb8fad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSprite: []
+  playerSprite:
+  - {fileID: 4018074224661003100, guid: 1ea9601a4c2c45f4d9df211a260e27d5, type: 3}
+  - {fileID: -4869357254534750094, guid: 1ea9601a4c2c45f4d9df211a260e27d5, type: 3}
+  - {fileID: -69871916218363647, guid: 1ea9601a4c2c45f4d9df211a260e27d5, type: 3}
+  - {fileID: 1839998147110866507, guid: 1ea9601a4c2c45f4d9df211a260e27d5, type: 3}
+  - {fileID: -8143584818952536569, guid: 1ea9601a4c2c45f4d9df211a260e27d5, type: 3}
+  - {fileID: 4289113178680934050, guid: 1ea9601a4c2c45f4d9df211a260e27d5, type: 3}
+  - {fileID: 4564897580977227239, guid: 1ea9601a4c2c45f4d9df211a260e27d5, type: 3}
+  - {fileID: 4873919324978898756, guid: 1ea9601a4c2c45f4d9df211a260e27d5, type: 3}
+  - {fileID: 7555821830959073814, guid: 1ea9601a4c2c45f4d9df211a260e27d5, type: 3}
   weaponSprites:
   - {fileID: 4971049064686688367, guid: 1ea9601a4c2c45f4d9df211a260e27d5, type: 3}
   - {fileID: 4204374477710404856, guid: 1ea9601a4c2c45f4d9df211a260e27d5, type: 3}
@@ -14659,10 +14734,10 @@ MonoBehaviour:
   - {fileID: -9052792337493064725, guid: 1ea9601a4c2c45f4d9df211a260e27d5, type: 3}
   - {fileID: -7870807981238829915, guid: 1ea9601a4c2c45f4d9df211a260e27d5, type: 3}
   - {fileID: -7548257428066557718, guid: 1ea9601a4c2c45f4d9df211a260e27d5, type: 3}
-  weaponPrice: 
-  xpTable: 
+  weaponPrice: 23000000460000006400000082000000c800000090010000
+  xpTable: 050000000a0000000f000000190000002300000032000000410000005a0000007800000096000000
   player: {fileID: 2028762048}
-  weapon: {fileID: 0}
+  weapon: {fileID: 787125930}
   floatingTextManager: {fileID: 1759829690}
   pesos: 0
   experience: 0
