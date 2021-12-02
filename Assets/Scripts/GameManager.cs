@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             Destroy(player.gameObject);
             Destroy(floatingTextManager.gameObject);
+            Destroy(hud.gameObject);
+            Destroy(menu.gameObject);
             return;
         }
 
@@ -20,7 +22,7 @@ public class GameManager : MonoBehaviour
 
         instance = this;
         SceneManager.sceneLoaded += LoadState;
-        DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
 
@@ -35,6 +37,8 @@ public class GameManager : MonoBehaviour
     public Weapon weapon;
     public FloatingTextManager floatingTextManager;
     public Animator deathMenuAnim;
+    public GameObject hud;
+    public GameObject menu;
 
     //Logic
     public int pesos;
@@ -109,6 +113,12 @@ public class GameManager : MonoBehaviour
         player.Respawn();
     }
 
+    //ON Scene Loaded
+    public void OnSceneLoaded(Scene s,LoadSceneMode mode)
+    {
+        player.transform.position = GameObject.Find("SpawnPoint").transform.position;
+    }
+
     //Save
     /*
      * Int preferedSkin
@@ -130,7 +140,7 @@ public class GameManager : MonoBehaviour
     }
     public void LoadState(Scene s, LoadSceneMode mode)
     {
-        SceneManager.sceneLoaded += LoadState;
+        SceneManager.sceneLoaded -= LoadState;
 
         if (!PlayerPrefs.HasKey("SaveState"))
             return;
@@ -144,10 +154,8 @@ public class GameManager : MonoBehaviour
         experience = int.Parse(data[2]);
         if(GetCurrentLevel() != 1)
         player.SetLevel(GetCurrentLevel());
-        
+
         //Change the weapon level
         weapon.SetWeaponLevel(int.Parse(data[3]));
-
-        player.transform.position = GameObject.Find("SpawnPoint").transform.position;
     }
 }

@@ -10,10 +10,7 @@ public class FloatingTextManager : MonoBehaviour
 
     public List<FloatingText> floatingTexts = new List<FloatingText>();
 
-    private void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
+    
 
     public void Update()
     {

@@ -14,7 +14,6 @@ public class Player : Mover
         base.Start();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        DontDestroyOnLoad(gameObject);
     } 
     protected override void Death()
     {
