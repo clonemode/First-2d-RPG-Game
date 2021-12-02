@@ -61,7 +61,7 @@ public class Enemy : Mover
             if (hits[i] == null)
                 continue;
 
-            if(hits[i].tag == "Fighter" && hits[i].name =="Player")
+            if(hits[i].tag == "Fighter" && hits[i].name == "Player")
             {
                 collidingWithPlayer = true;
             }
@@ -75,6 +75,6 @@ public class Enemy : Mover
     {
         Destroy(gameObject);
         GameManager.instance.GrantXp(xpValue);
-        GameManager.instance.ShowText("+" + xpValue + "xp", 30, Color.magenta, transform.position, Vector3.up * 40, 1.0f);
+        GameManager.instance.ShowText("+" + xpValue + "xp", 20, Color.magenta, transform.position, Vector3.up * 30, 1.0f);
     }
 }
